@@ -2,27 +2,85 @@
 <html>
     <head>
         <title>Louis website</title>
-    </head> 
+        <style>
+            body{
+                background: url(https://www.stcharles.k12.la.us/cms/lib/LA01906411/Centricity/Domain/642/2-IMG_3873.JPG);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position:center;
+                background-attachment: fixed;
+                 background-color: #cccccc;}
+                 }
+            [id=all-contents] {
+                max-width: 800px;
+                margin: auto;
+            }
+            nav {
+                border-left: 2px solid black;
+                border-top:2px solid black;
+                border-right:2px solid black ;
+                border-radius: 25px 25px 0px 0px;
+                background: rgb(153, 51, 153);
+                margin: 0 auto;
+                display: flex;
+                padding: 10px
+                
+            }
+            
+            nav ul {font-family:Tahoma, sans-serif;
+                list-style-image: none;
+            }
+            nav li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+            nav a {
+                text-decoration: none;
+                color:rgb(217, 102, 255);
+            }
     
+            main {
+                 border-radius: 0px 0px 25px 25px;
+                  border-left: 2px solid black;
+                border-bottom:2px solid black;
+                border-right:2px solid black;
+                background: url("https://www.stcharles.k12.la.us/cms/lib/LA01906411/Centricity/Domain/642/hahnville%20robotics-01.png");
+                 background-size:contain ;
+                background-repeat: no-repeat;
+                background-position:right;
+                background-color: rgb(102, 102, 153)
+            }
+               [class=content] {
+                flex:0;
+                padding: 1px 5px 95px;
+                color:rgb(204, 204, 204);
+            }
+            
+        </style>
+    </head> 
     <body>
             <div id="all-contents">
                 <nav>
+                     <ul>
+                    <p><font size="4">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+                  </font></p>  
                 </nav>
                 
                 <main>
-                        <div class="sidebar">
-                            <img src="https://www.stcharles.k12.la.us/cms/lib/LA01906411/Centricity/Domain/642/hahnville%20robotics-01.png">
-                        </div>
                         
                         <div class="content">
                             <h1>
-                                Louis Spitz
+                               <p align="left"> Louis Spitz
                             </h1>
                             <section class="interests">
                              <ul>
-                                 <1i>thing1</11>
-                                 <1i>thing2</1i>
-                                 <1i>thing3</1i>
+                                 <li>robotics</li>
+                                <li>boyscouts</li>
+                                <li>programing</li>
+                                </p>
                              </ul>   
                             </section>
                         </div>
