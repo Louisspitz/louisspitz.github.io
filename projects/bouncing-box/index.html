@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bouncing Box</title>
+	<script src="jquery.min.js"></script>
+
+	<!-- BEGIN CSS -->
+	<style>
+		/* TODO 1 */
+		[class="box"] {
+			display: block;
+			width: 100px;
+			height: 100px;
+			left: 0px;
+			background-image:url("Picture1.png");
+			 background-size: cover;
+			 background-repeat: no-repeat;
+			position: absolute;
+			font-size: 300%;
+			text-align: center;
+			top: 100;
+		}
+			body{	
+			background: url("http://orig13.deviantart.net/037d/f/2012/042/f/4/seamless_human_skin_by_hhh316-d4pfpwv.jpg");
+			 background-size: cover;
+		}
+	</style>
+
+</head>
+<body class="board">
+	<audio loop autoplay>
+  <source src=3-4-10005.mp3>
+  </audio>
+	<!-- HTML for the box -->
+	<div class="box">0</div>
+
+	<!-- BEGIN JAVASCRIPT -->
+	
+	<script>
+		(function(){
+			'use strict';
+			// Variable declarations
+			var box;
+			var boardWidth;
+			var boardhight;
+			var update;
+			var handleBoxClick;
+			var top;
+			var direction;
+			var dtop;
+			
+			// jQuery stuff setup for you
+			box = $('.box');
+			boardWidth = $('.board').width();
+			// TODO 2
+			var position;
+			var points;
+			var speed;
+			direction = 1;
+			dtop=1;
+			top = 0;
+			position = 0;
+			points = 0;
+			speed = 10;
+			
+				
+			box.css('left', position);
+			// TODO 3 / 4
+			setInterval(update, 50);
+
+			update = function(){
+				position = position + (speed * direction);
+				if(position > boardWidth) {
+					direction=-1;
+				}
+				if(position<1){
+					direction=1;
+				}
+				box.css('left', position);
+			};
+			// TODO 5 / 6
+			handleBoxClick = function() {
+				speed = speed + 3;
+				position =0;
+				points = points + 1;
+				box.text(points);
+			};
+			//this calls update every 50 milliseconds
+			setInterval(update, 50);
+			// this calls the handle handleBoxClick function every time the box is clicked on
+			box.on('click', handleBoxClick);
+			
+				})();
+		</script>
+	</body>
+</html>
