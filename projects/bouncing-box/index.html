@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+	 <link rel="icon" href="favicon.ico" type="image/x-icon">
+	<title>
+		kill the fly
+	</title>
 	<meta charset="utf-8">
-	<title>Bouncing Box</title>
+	
+
 	<script src="jquery.min.js"></script>
 
 	<!-- BEGIN CSS -->
@@ -19,7 +24,7 @@
 			position: absolute;
 			font-size: 300%;
 			text-align: center;
-			top: 100;
+			top:100;
 		}
 			body{	
 			background: url("http://orig13.deviantart.net/037d/f/2012/042/f/4/seamless_human_skin_by_hhh316-d4pfpwv.jpg");
@@ -29,8 +34,8 @@
 
 </head>
 <body class="board">
-	<audio loop autoplay>
-  <source src=3-4-10005.mp3>
+	<audio  loop autoplay>
+  <source src="buzz.mp3">
   </audio>
 	<!-- HTML for the box -->
 	<div class="box">0</div>
@@ -46,9 +51,7 @@
 			var boardhight;
 			var update;
 			var handleBoxClick;
-			var top;
 			var direction;
-			var dtop;
 			
 			// jQuery stuff setup for you
 			box = $('.box');
@@ -58,8 +61,6 @@
 			var points;
 			var speed;
 			direction = 1;
-			dtop=1;
-			top = 0;
 			position = 0;
 			points = 0;
 			speed = 10;
