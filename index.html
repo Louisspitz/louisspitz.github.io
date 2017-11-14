@@ -4,6 +4,14 @@
          <link rel="icon" href="favicon (1).ico" type="image/x-icon">
         <title>Louis website
         </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+              $(document).ready(function(){
+              $("button").click(function(){
+                  $("ul.professional-interests").toggle();
+              });
+          });
+        </script>
         <style>
             body{
                 background: url(https://www.stcharles.k12.la.us/cms/lib/LA01906411/Centricity/Domain/642/2-IMG_3873.JPG);
@@ -12,7 +20,7 @@
                 background-position:center;
                 background-attachment: fixed;
                  background-color: rgb(153, 0, 255);}
-                 }
+                 
             [id=all-contents] {
                 max-width: 800px;
                 margin: auto;
@@ -91,5 +99,17 @@
                             </section>
                         </div>
             </div>
+           <main>
+    <div class="content">
+        <header>Professional Interests</header>
+        <section class="interests">
+            <button>Use me to see my professional interests</button>
+            <ul class="professional-interests">
+                <li>computert Engenering</li>
+                <li>Computer Science</li>
+            </ul>
+        </section>
+    </div>
+</main>
     </body>
 </html>
