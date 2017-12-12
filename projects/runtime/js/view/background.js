@@ -16,8 +16,13 @@
             throw new Error("Invalid ground argument");
         }
 
+
         // container which will be returned
         var background;
+
+        var backgroundBox;
+
+        var buildings = [];
 
         // add objects for display inb ackground
         // called at the start of game and whenever the page is resized
@@ -27,14 +32,47 @@
             var canvasHeight = app.canvas.height;
             var groundY = ground.y;
 
+
+
+
             background.removeAllChildren();
+
 
             // TODO: 3 - YOUR DRAW CODE GOES HERE
 
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-            var backgroundFill = draw.rect(canvasWidth,canvasHeight,'blue');
+            var backgroundFill = draw.rect(canvasWidth,groundY,"orange");
             background.addChild(backgroundFill);
+
+            var circle;
+
+            for(var i=0;i<100;i++) {
+                circle = draw.circle(10,'white','LightGray',2);
+                circle.x = canvasWidth*Math.random();
+                circle.y = groundY*Math.random();
+                background.addChild(circle);
+            }
+
+            backgroundBox = draw.rect(100,100,'Blue');
+            backgroundBox.x = canvasWidth;
+            backgroundBox.y = groundY;
+            background.addChild(backgroundBox);
+
+
+
+            var building;
+
+            for(var i=0;i<15;i++) {
+                 var buildingHeight = (Math.floor(Math.random()*250) +100+i);
+                building = draw.rect(75,buildingHeight,'LightGray','Black',1);
+                building.x = 200*i;
+                building.y = groundY-buildingHeight;
+                background.addChild(building);
+                buildings.push(building);
+            }
+
+
         }
 
         // Perform background animation
@@ -44,12 +82,28 @@
             var canvasWidth = app.canvas.width;
             var canvasHeight = app.canvas.height;
             var groundY = ground.y;
+            backgroundBox.x = backgroundBox.x - 1;
+            if(backgroundBox.x < -100) {
+                backgroundBox.x = canvasWidth;
+            }
+
+
+
+            //building
+            for(var i=0; i< buildings.length;i++){
+                buildings[i].x = buildings[i].x-10;
+            if(buildings[i].x<-100){
+                buildings[i].x = canvasWidth;}
+            }
+
 
         }
 
         background = new createjs.Container();
         background.resize = render;
         background.update = update;
+
+
 
         app.addResizeable(background);
         app.addUpdateable(background);

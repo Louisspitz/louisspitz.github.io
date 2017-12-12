@@ -6,7 +6,7 @@
 		kill the fly
 	</title>
 	<meta charset="utf-8">
-	
+
 
 	<script src="jquery.min.js"></script>
 
@@ -26,11 +26,11 @@
 			text-align: center;
 			top:100;
 		}
-			body{	
+			body{
 			background: url("http://orig13.deviantart.net/037d/f/2012/042/f/4/seamless_human_skin_by_hhh316-d4pfpwv.jpg");
 			 background-size: cover;
 		}
-                 
+
 	</style>
 
 </head>
@@ -42,7 +42,7 @@
 	<div class="box">0</div>
 
 	<!-- BEGIN JAVASCRIPT -->
-	
+
 	<script>
 		(function(){
 			'use strict';
@@ -53,7 +53,7 @@
 			var update;
 			var handleBoxClick;
 			var direction;
-			
+
 			// jQuery stuff setup for you
 			box = $('.box');
 			boardWidth = $('.board').width();
@@ -65,8 +65,8 @@
 			position = 0;
 			points = 0;
 			speed = 10;
-			
-				
+
+
 			box.css('left', position);
 			// TODO 3 / 4
 			setInterval(update, 50);
@@ -92,7 +92,7 @@
 			setInterval(update, 50);
 			// this calls the handle handleBoxClick function every time the box is clicked on
 			box.on('click', handleBoxClick);
-			
+
 				})();
 		</script>
 	</body>
