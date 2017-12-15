@@ -21,8 +21,11 @@
         var background;
 
         var backgroundBox;
+        var backgroundBoxa;
 
         var buildings = [];
+        var buildingsb = [];
+        var buildingsc = [];
 
         // add objects for display inb ackground
         // called at the start of game and whenever the page is resized
@@ -35,6 +38,11 @@
 
 
 
+
+
+
+
+
             background.removeAllChildren();
 
 
@@ -42,35 +50,52 @@
 
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-            var backgroundFill = draw.rect(canvasWidth,groundY,"orange");
+            var backgroundFill = draw.rect(canvasWidth,groundY,"black");
             background.addChild(backgroundFill);
+
+
+
 
             var circle;
 
-            for(var i=0;i<100;i++) {
-                circle = draw.circle(10,'white','LightGray',2);
-                circle.x = canvasWidth*Math.random();
-                circle.y = groundY*Math.random();
-                background.addChild(circle);
-            }
 
-            backgroundBox = draw.rect(100,100,'Blue');
-            backgroundBox.x = canvasWidth;
-            backgroundBox.y = groundY;
-            background.addChild(backgroundBox);
+
+
+
 
 
 
             var building;
 
+                for(var i=0;i<15;i++) {
+                 var buildingHeightc = (Math.floor(Math.random()*150) +50+i);
+                building = draw.rect(75,buildingHeightc,'BLACK','white',1);
+                building.x = 200*i;
+                building.y = groundY-buildingHeightc;
+                background.addChild(building);
+                buildingsc.push(building);
+            }
+
+            for(var i=0;i<15;i++) {
+                 var buildingHeightb = (Math.floor(Math.random()*200) +50+i);
+                building = draw.rect(75,buildingHeightb,'BLACK','white',1);
+                building.x = 100*i;
+                building.y = groundY-buildingHeightb;
+                background.addChild(building);
+                buildingsb.push(building);
+            }
+
             for(var i=0;i<15;i++) {
                  var buildingHeight = (Math.floor(Math.random()*250) +100+i);
-                building = draw.rect(75,buildingHeight,'LightGray','Black',1);
+                building = draw.rect(75,buildingHeight,'BLACK','white',1);
                 building.x = 200*i;
                 building.y = groundY-buildingHeight;
                 background.addChild(building);
                 buildings.push(building);
             }
+
+
+
 
 
         }
@@ -82,19 +107,29 @@
             var canvasWidth = app.canvas.width;
             var canvasHeight = app.canvas.height;
             var groundY = ground.y;
-            backgroundBox.x = backgroundBox.x - 1;
-            if(backgroundBox.x < -100) {
-                backgroundBox.x = canvasWidth;
-            }
+
 
 
 
             //building
+           for(var i=0; i< buildingsc.length;i++){
+                buildingsc[i].x = buildingsc[i].x-1.5;
+            if(buildingsc[i].x<-100){
+                buildingsc[i].x = canvasWidth;}
+            }
+
+            for(var i=0; i< buildingsb.length;i++){
+                buildingsb[i].x = buildingsb[i].x-1.75;
+            if(buildingsb[i].x<-100){
+                buildingsb[i].x = canvasWidth;}
+            }
+
             for(var i=0; i< buildings.length;i++){
-                buildings[i].x = buildings[i].x-10;
+                buildings[i].x = buildings[i].x-2;
             if(buildings[i].x<-100){
                 buildings[i].x = canvasWidth;}
             }
+
 
 
         }

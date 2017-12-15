@@ -3,8 +3,9 @@
     <head>
 
         <meta charset="utf-8">
+        <link rel="icon" href="favicon (1).ico" type="image/x-icon">
 
-        <title>Operation Spark || Runtime!</title>
+        <title>Runtime</title>
         <meta name="description" content="Operation Spark Motion Poem">
         <meta name="author" content="operationspark.org">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,15 +41,20 @@
         <script src="js/game.js"></script>
 
        <!-- add any additional scripts here -->
+       <script src="js/level01.js"></script>
        <script src="js/view/background.js"></script>
             <script src="js/view/hud.js"></script>
         <style type="text/css">
-
-
+            body {
+            background: black;
+            }
             /*override default styles here*/
         </style>
     </head>
     <body>
+        <audio  loop autoplay>
+          <source src="sound.mp3">
+  </audio>
         <div id="main">
             <canvas id="canvas" width="500" height="500"></canvas>
         </div>
@@ -132,10 +138,14 @@
                 }
 
                 // TODO 1 : add a heads-up display to game
-                var hud = opspark.makeHud();
+                hud = opspark.makeHud();
                 view.addChild(hud);
 
                 // TODO 3 : create game manager
+
+                var game = opspark.createGameManager(app,hud);
+                opspark.runLevelInGame(game);
+
 
             })();
         </script>
