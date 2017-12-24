@@ -11,6 +11,8 @@
 
 
 
+
+
         // this data will allow us to define all of the
         // behavior of our game
         var levelData = {
@@ -39,24 +41,24 @@
         obstacleImage.y = -25;
         };
 
-        var sawy = [groundY,groundY-115];
-        for(var i=0;i<=50;i++){
+        var sawy = [groundY,groundY-105];
+        for(var i=0;i<=40;i++){
 
-            createSawBlade (i*200, sawy[(Math.floor((Math.random() *2)))]);
+            createSawBlade ((i*200) + 600, sawy[(Math.floor((Math.random() *2)))]);
         }
 
 
                 function createEnemy(x,y) {
 
                 var enemy =  game.createGameItem('enemy',25);
-                var redSquare = draw.rect(50,50,'red');
+                var redSquare = draw.rect(50,50,'BLACK','white',1.5);
                 redSquare.x = -25;
                 redSquare.y = -25;
                 enemy.addChild(redSquare);
-                enemy.x = 400;
-                enemy.y = groundY-50;
+                enemy.x = x;
+                enemy.y = y;
                 game.addGameItem(enemy);
-                enemy.velocityX = -5;
+                enemy.velocityX = ( Math.floor((Math.random() * -7) + -3));
                 enemy.rotationalVelocity=30;
                 enemy.onPlayerCollision = function() {
                 game.changeIntegrity( Math.floor((Math.random() * -50) + -5));
@@ -67,18 +69,28 @@
                     game.increaseScore(100);
                     enemy.fadeOut();
                 }}
-                createEnemy(400,groundY-10);
+
+
+
+
+                var box = [groundY - 20,groundY-60];
+                for(var i=0;i<=25;i++){
+
+            createEnemy ((i*1000) + 600, box[(Math.floor((Math.random() *2)))]);
+                }
+
+
 
                 function reword(x,y){
                     var reword=  game.createGameItem('reword',25);
-                    var rewordImg=draw.rect(100, 100, 'blue' );
+                    var rewordImg=draw.rect(100,500, 'white' );
                     rewordImg.x =-25;
-                    rewordImg.y =-25;
+                    rewordImg.y =-365;
                     reword.addChild(rewordImg);
-                    reword.x =x;
-                    reword.y = groundY-130;
+                    reword.x = x;
+                    reword.y = groundY-y;
                     game.addGameItem(reword);
-                    reword.velocityX=-2;
+                    reword.velocityX=-2.125;
                     reword.rotationalVelocity=0;
                     reword.onPlayerCollision = function(){
                         game.increaseScore(800);
