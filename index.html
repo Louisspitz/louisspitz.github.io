@@ -66,9 +66,32 @@
                 padding: 1px 5px 95px;
                 color:rgb(204, 204, 204);
             }
+
+#map {
+    width: 485px;
+    height: 300px;
+    top:375px;
+    left:575px;
+    background-color: grey;
+}
+
         </style>
     </head>
     <body>
+        My Google map
+<div id="map"></div>
+<script>
+
+    function initMap() {
+
+        var Nottingham = {lat: 29.890028, lng: -90.406422};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: Nottingham
+        });
+    }
+</script>
             <div id="all-contents">
                 <nav>
 
@@ -95,6 +118,7 @@
                              </ul>
                             </section>
                         </div>
+
             </div>
            <main>
     <div class="content">
@@ -164,5 +188,9 @@
                 </section>
             </div>
         </main>
+     <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF54ZbYxRHuPJXUv96V6WBCPqdWeIw9S4&callback=initMap">
+</script>
+
     </body>
 </html>
