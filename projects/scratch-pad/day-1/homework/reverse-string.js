@@ -23,7 +23,7 @@ function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
     var i;
     var t=[];
-    for (i=input.length;i>input.length-input.length-1;i--){
+    for (i=input.length;i>-1;i--){
           t.push(input.charAt(i));
 
 
