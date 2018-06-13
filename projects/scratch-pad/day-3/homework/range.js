@@ -25,9 +25,9 @@
    var r=[];
 if(start<end){for(var i=start;i<=end;i++){
     r.push(i);}}
-  else{for(var t =start ;t >=end;t--){
-    r.push(t);}}
-return(r);
+  else{for(var i =start ;i >=end;i--){
+    r.push(i);}}
+return r;
 
 
 
