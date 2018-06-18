@@ -114,13 +114,20 @@ if (Array.isArray(value)) {
         return "date";
 
 
-    } else if (typeof value === 'string') {
+    }
+    else if (typeof value === 'string') {
         return 'string';
-    } else if (typeof value === 'boolean') {
+    }
+    else if (typeof value === 'boolean') {
         return 'boolean';
-    } else if (typeof value === 'object') {
+    }
+    else if (typeof value === 'object') {
         return 'object';
-    }else if (typeof value==='undefined'){return 'undefined';}
+    }
+    else if (typeof value==='undefined'){
+        return 'undefined';
+
+    }
     else {return "function";}
 
 
