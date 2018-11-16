@@ -159,30 +159,24 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-    let friends = {};
-    let nonfriends = {};
+
 function nonFriends(name, array) {
+ var nonFriends = [];
+  for(var i = 0; i < array.length; i++){
+      if(name !== array[i].name && array[i].friends.indexOf(name)){
+          nonFriends.push(array[i].name);
+      }
 
-
-    friends.name = { array: array };
-    for (name in friends) {
-        for (let i = 0; i < array.length; i++) {
-            for (let t = 0; t < friends.length; t++) {
-                if (friends(t) != array(i)) {
-                    nonfriends.push(friends(t));
-                }
-            }
-        }
-    }
+  }
+  return nonFriends;
 }
-console.log(nonfriends);
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
 function updateObject(object, key, value) {
-
+object[key] = value;
+        return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -190,15 +184,26 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
+for(var i = 0; i < array.length; i++){
+      delete object[array[i]];
 
+    }
 }
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
+array.sort();
+  for(var i = array.length; i--;){
+    if(array[i] === array[i - 1]){
+      array.splice(i,1);
+    }
 
+  }
+  return array;
 }
 
 //////////////////////////////////////////////////////////////////////

@@ -103,13 +103,13 @@ if (Array.isArray(value)) {
  */
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-if (Array.isArray(value)) {
+    if (Array.isArray(value)) {
         return 'array';
     } else if (value === null) {
         return 'null';
     } else if (typeof value === 'number') {
-    return 'number';
-}
+        return 'number';
+    }
     else if (value instanceof Date) {
         return "date";
 
@@ -128,7 +128,9 @@ if (Array.isArray(value)) {
         return 'undefined';
 
     }
-    else {return "function";}
+    else {
+        return "function";
+    }
 
 
 

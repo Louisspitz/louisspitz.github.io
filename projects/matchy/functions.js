@@ -50,14 +50,16 @@ function remove(animals, name){
 // Step 4 - Create ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function add(animals, animal) {
-if (animal.name.length > 0 && animal.species.length > 0){
-    for (var i = 0; i < animals.length; i++){
+    if (animal.name.length > 0 && animal.species.length > 0){
+        for (var i = 0; i < animals.length; i++){
+            if (animals[i].name === animal.name){
+                return;
+            }
 
-
-            animals.push(animal);
         }
-    }
-};
+        animals.push(animal);
+    };
+}
 
 
 /**
