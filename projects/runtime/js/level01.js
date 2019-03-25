@@ -26,7 +26,6 @@
 
         // set this to true or false depending on if you want to see hitzones
         game.setDebugMode(false);
-
         // BEGIN EDITING YOUR CODE HERE
         var createSawBlade = function(x,y) {
              var hitZoneSize = 25;
